@@ -1,0 +1,45 @@
+// COLOR VARIABLES
+
+$color-primary: #171618;
+$color-primary-focus: #2e2d2f;
+$color-primary-content: #dca54c;
+
+$color-secondary: #ffffff;
+$color-secondary-focus: #e6e6e6;
+$color-secondary-content: #000000;
+
+$color-accent: #dca54c;
+$color-accent-focus: #e1b266;
+$color-accent-content: #171618;
+
+// FONT VARIABLES
+$font-primary: "Lato", sans-serif;
+$font-secondary: "Jost", sans-serif;
+$font-accent: "Bodoni Moda", serif;
+
+// FONT SIZES
+
+%text-xs {
+  font-size: 1.2rem; /* 12px */
+  line-height: 1.6rem; /* 16px */
+}
+
+%text-sm {
+  font-size: 1.4rem; /* 14px */
+  line-height: 2rem; /* 20px */
+}
+
+%text-base {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+%text-lg {
+  font-size: 1.8rem; /* 18px */
+  line-height: 2.8rem; /* 28px */
+}
+
+%text-xl {
+  font-size: 2rem; /* 20px */
+  line-height: 2.8rem; /* 28px */
+}

@@ -1,0 +1,15 @@
+{
+  "name": "maison",
+  "version": "1.0.0",
+  "description": "Maison - Your trusted source for homes and real estates.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "sass --watch sass/main.scss:css/main.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.68.0"
+  }
+}
