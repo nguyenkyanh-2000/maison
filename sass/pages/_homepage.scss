@@ -82,7 +82,7 @@
 .section-story {
   grid-row: story-start / content-end;
   grid-column: content-start / content-end;
-  margin: 15rem 0;
+  margin-bottom: 15rem;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
