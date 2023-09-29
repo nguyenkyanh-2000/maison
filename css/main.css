@@ -1,4 +1,4 @@
-.nav__link:link, .nav__link:visited, .copyright, .navbar__link, .btn {
+.login-form__label, .house__name, .house__price, .house__location, .house__room, .nav__link:link, .nav__link:visited, .copyright, .navbar__link, .btn {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
@@ -246,13 +246,13 @@ html {
 }
 
 .home {
-  grid-template-rows: [header-start] 6rem [header-end content-start] 80vh [features-start] minmax(40vw, min-content) [story-start] minmax(40vw, min-content) [content-end footer-start] min-content [footer-end];
+  grid-template-rows: [header-start] 8rem [header-end content-start] 80vh [features-start] minmax(40vw, min-content) [story-start] minmax(40vw, min-content) [homes-start] minmax(50vw, min-content) [content-end footer-start] min-content [footer-end];
 }
 
 .section-hero {
   grid-row: header-start/features-start;
   grid-column: 1/-1;
-  background-image: linear-gradient(rgba(23, 22, 24, 0.93), rgba(23, 22, 24, 0.93)), url(../../asset/img/hero.jpeg);
+  background-image: linear-gradient(rgba(23, 22, 24, 0.8), rgba(23, 22, 24, 0.8)), url(../../asset/img/hero.jpeg);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -286,15 +286,13 @@ html {
 }
 
 .feature {
-  width: auto;
+  width: 100%;
   display: grid;
   place-self: center;
   grid-template-columns: min-content 1fr;
   grid-template-rows: min-content min-content;
   row-gap: 1rem;
   column-gap: 2rem;
-  justify-content: center;
-  align-items: center;
 }
 .feature__icon {
   fill: #dca54c;
@@ -307,12 +305,19 @@ html {
 }
 
 .section-story {
-  grid-row: story-start/content-end;
+  grid-row: story-start/homes-start;
   grid-column: content-start/content-end;
   margin-bottom: 15rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-flow: row;
+}
+@media only screen and (max-width: 900px) {
+  .section-story {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    grid-auto-flow: column;
+  }
 }
 .section-story__picture {
   background-image: url(../../asset/img/story-1.jpeg);
@@ -325,7 +330,100 @@ html {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding: 0 2rem;
+  padding: 2rem;
   background-color: #000000;
   color: #ffffff;
+}
+
+.section-houses {
+  grid-row: homes-start/content-end;
+  grid-column: content-start/content-end;
+  margin-bottom: 15rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+}
+@media only screen and (max-width: 900px) {
+  .section-houses {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .section-houses {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+.house {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 4fr 1fr 1fr;
+  background-color: #000000;
+  color: #ffffff;
+}
+.house__img {
+  grid-column: 1/-1;
+  width: 100%;
+  height: 100%;
+}
+.house__name, .house__price, .house__location, .house__room {
+  place-self: center;
+  display: flex;
+  align-items: center;
+  font-family: "Jost", sans-serif;
+}
+.house__name svg, .house__price svg, .house__location svg, .house__room svg {
+  fill: #ffffff;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.login {
+  background-color: #171618;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  width: 45rem;
+  height: 45rem;
+  background-color: #ffffff;
+  border-radius: 2rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: 1.5fr 1fr 1fr 1.5fr;
+}
+.login-form__title {
+  place-self: center;
+  color: #171618;
+  font-size: 4rem;
+  font-family: "Bodoni Moda", serif;
+  font-weight: 700;
+}
+.login-form__btn {
+  background-color: #000000;
+  color: #ffffff;
+  place-self: center;
+  width: 80%;
+  border-radius: 1rem;
+}
+.login-form__field {
+  display: flex;
+  flex-direction: column;
+  place-self: center;
+  width: 80%;
+}
+.login-form__label {
+  font-family: "Jost", sans-serif;
+}
+.login-form__input {
+  border-radius: 1rem;
+  height: 3rem;
+  padding: 0.5rem 1rem;
 }

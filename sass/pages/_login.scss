@@ -1,0 +1,54 @@
+@use "../abstracts/" as *;
+
+.login {
+  background-color: $color-primary;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  width: 45rem;
+  height: 45rem;
+  background-color: $color-secondary;
+  border-radius: 2rem;
+  padding: 2rem;
+
+  display: grid;
+  grid-template-rows: 1.5fr 1fr 1fr 1.5fr;
+
+  &__title {
+    place-self: center;
+    color: $color-primary;
+    font-size: 4rem;
+    font-family: $font-accent;
+    font-weight: 700;
+  }
+
+  &__btn {
+    background-color: $color-secondary-content;
+    color: $color-secondary;
+    place-self: center;
+    width: 80%;
+    border-radius: 1rem;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    place-self: center;
+    width: 80%;
+  }
+
+  &__label {
+    @extend %text-base;
+    font-family: $font-secondary;
+  }
+
+  &__input {
+    border-radius: 1rem;
+    height: 3rem;
+    padding: 0.5rem 1rem;
+  }
+}
