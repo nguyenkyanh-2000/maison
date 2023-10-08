@@ -43,26 +43,69 @@
 
       <form class="contact-form" action="#" method="POST">
         <div class="contact-form__field">
-          <label for="username" class="contact-form__label">Username:</label>
+          <label for="first-name" class="contact-form__label"
+            >First name:</label
+          >
           <input
             type="text"
-            id="username"
-            name="username"
+            id="first-name"
+            name="first-name"
             class="input contact-form__input"
             required
           />
         </div>
         <div class="contact-form__field">
-          <label for="password" class="contact-form__label">Password:</label>
+          <label for="last-name" class="contact-form__label">Last name:</label>
           <input
-            type="password"
-            id="password"
-            name="password"
+            type="text"
+            id="last-name"
+            name="last-name"
             class="input contact-form__input"
             required
           />
         </div>
-        <button type="submit" class="btn contact-form__btn">Login</button>
+
+        <div class="contact-form__field--span">
+          <label for="phone-number" class="contact-form__label"
+            >Phone number:</label
+          >
+          <input
+            type="text"
+            id="phone-number"
+            name="phone-number"
+            class="input contact-form__input"
+            required
+          />
+        </div>
+
+        <div class="contact-form__field--span">
+          <label for="address" class="contact-form__label">Address:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            class="input contact-form__input"
+            required
+          />
+        </div>
+
+        <div class="contact-form__field--span">
+          <label for="email" class="contact-form__label">Email:</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            class="input contact-form__input"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn contact-form__btn--contact">
+          Send form
+        </button>
+        <button type="reset" class="btn contact-form__btn--reset">
+          Clear form
+        </button>
       </form>
 
       <div class="map">

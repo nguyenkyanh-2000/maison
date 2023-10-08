@@ -1,4 +1,4 @@
-.slider-container, .checkboxes-container__title, .toggle-container, .catalog-item__name, .catalog-item__price, .login-form__label, .house__name, .house__price, .house__location, .house__room, .nav__link:link, .nav__link:visited, .copyright, .navbar__link, .checkbox, .input, .btn {
+.contact-form__label, .slider-container, .checkboxes-container__title, .toggle-container, .catalog-item__name, .catalog-item__price, .login-form__label, .house__name, .house__price, .house__location, .house__room, .nav__link:link, .nav__link:visited, .copyright, .navbar__link, .checkbox, .input, .btn {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
@@ -675,7 +675,7 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: min-content 1fr;
-  gap: 3rem;
+  gap: 4rem;
 }
 @media only screen and (max-width: 900px) {
   .section-contact {
@@ -689,4 +689,34 @@ html {
 }
 .info__heading {
   color: #000000;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr) 6rem;
+  gap: 2rem;
+}
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contact-form__field--span {
+  grid-column: 1/-1;
+}
+.contact-form__label {
+  font-family: "Jost", sans-serif;
+}
+.contact-form__btn--contact {
+  background-color: #dca54c;
+}
+.contact-form__btn--contact:hover {
+  background-color: #e1b266;
+}
+.contact-form__btn--reset {
+  background-color: #e6e6e6;
+}
+.contact-form__btn--reset:hover {
+  background-color: #ffffff;
 }

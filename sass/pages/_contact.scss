@@ -19,7 +19,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: min-content 1fr;
-  gap: 3rem;
+  gap: 4rem;
 
   @include screenSize(tablet-portrait) {
     display: grid;
@@ -36,6 +36,41 @@
 }
 
 .contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr) 6rem;
+  gap: 2rem;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &--span {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__label {
+    @extend %text-base;
+    font-family: $font-secondary;
+  }
+
+  &__btn {
+    &--contact {
+      background-color: $color-accent;
+      &:hover {
+        background-color: $color-accent-focus;
+      }
+    }
+
+    &--reset {
+      background-color: $color-secondary-focus;
+      &:hover {
+        background-color: $color-secondary;
+      }
+    }
+  }
 }
 
 .map {
