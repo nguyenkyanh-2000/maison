@@ -1,0 +1,59 @@
+@use "../abstracts/" as *;
+
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  color: $color-secondary;
+  @extend %text-base;
+  font-family: $font-secondary;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  &__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    width: 2rem;
+    background-color: $color-secondary;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+
+  &:hover .checkbox__input ~ .checkbox__checkmark {
+    background-color: $color-secondary-focus;
+  }
+
+  .checkbox__input:checked ~ .checkbox__checkmark {
+    background-color: $color-accent;
+
+    &:after {
+      display: block;
+      left: 7.5px;
+      top: 5px;
+      width: 0.5rem;
+      height: 1rem;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+}

@@ -1,4 +1,4 @@
-.login-form__label, .house__name, .house__price, .house__location, .house__room, .nav__link:link, .nav__link:visited, .copyright, .navbar__link, .btn {
+.slider-container, .checkboxes-container__title, .toggle-container, .catalog-item__name, .catalog-item__price, .login-form__label, .house__name, .house__price, .house__location, .house__room, .nav__link:link, .nav__link:visited, .copyright, .navbar__link, .checkbox, .input, .btn {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
@@ -134,9 +134,123 @@ html {
   background-color: #e6e6e6;
 }
 
+.input {
+  width: 100%;
+  border-radius: 1rem;
+  height: 3.5rem;
+  padding: 0.5rem 1rem;
+  border: 0.5px solid #171618;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2rem;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  border-radius: 2.5rem;
+}
+.slider::-webkit-slider-runnable-track {
+  height: 100%;
+  background: #e6e6e6;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2rem;
+  width: 2rem;
+  background-color: #ffffff;
+  border-radius: 100%;
+  box-shadow: -31rem 0 0 30rem #dca54c;
+}
+
+.toggle__control {
+  transition: 0.3s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  width: 5rem;
+  height: 2rem;
+  display: block;
+  border-radius: 2rem;
+  background-color: #e6e6e6;
+  position: relative;
+}
+.toggle__control:after {
+  transition: 0.3s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.toggle__input {
+  display: none;
+}
+.toggle__input:checked + .toggle__control {
+  border-color: #dca54c;
+  background-color: #e1b266;
+}
+.toggle__input:checked + .toggle__control:after {
+  left: 3rem;
+}
+
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #ffffff;
+  font-family: "Jost", sans-serif;
+}
+.checkbox__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkbox__checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  width: 2rem;
+  background-color: #ffffff;
+}
+.checkbox__checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkbox:hover .checkbox__input ~ .checkbox__checkmark {
+  background-color: #e6e6e6;
+}
+.checkbox .checkbox__input:checked ~ .checkbox__checkmark {
+  background-color: #dca54c;
+}
+.checkbox .checkbox__input:checked ~ .checkbox__checkmark:after {
+  display: block;
+  left: 7.5px;
+  top: 5px;
+  width: 0.5rem;
+  height: 1rem;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
 .header {
   grid-row: header-start/header-end;
-  grid-column: container-start/container-end;
+  grid-column: 1/-1;
   background-color: #171618;
   z-index: 50;
   padding: 0 6rem;
@@ -185,6 +299,7 @@ html {
   font-size: 4rem;
   font-family: "Bodoni Moda", serif;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .navbar {
@@ -341,28 +456,33 @@ html {
   margin-bottom: 15rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: min-content 1fr 1fr;
   gap: 2rem;
 }
 @media only screen and (max-width: 900px) {
   .section-houses {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
   }
 }
 @media only screen and (max-width: 600px) {
   .section-houses {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: min-content 1fr;
   }
+}
+.section-houses__heading {
+  color: #000000;
+  grid-column: 1/-1;
+  place-self: center;
 }
 
 .house {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 4fr 1fr 1fr;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #171618;
+  color: #dca54c;
 }
 .house__img {
   grid-column: 1/-1;
@@ -376,7 +496,7 @@ html {
   font-family: "Jost", sans-serif;
 }
 .house__name svg, .house__price svg, .house__location svg, .house__room svg {
-  fill: #ffffff;
+  fill: #dca54c;
   height: 2rem;
   width: 2rem;
   margin-right: 1rem;
@@ -397,7 +517,8 @@ html {
   border-radius: 2rem;
   padding: 2rem;
   display: grid;
-  grid-template-rows: 1.5fr 1fr 1fr 1.5fr;
+  grid-template-rows: 2fr 1fr 1fr 2fr;
+  gap: 1rem;
 }
 .login-form__title {
   place-self: center;
@@ -418,12 +539,154 @@ html {
   flex-direction: column;
   place-self: center;
   width: 80%;
+  gap: 0.5rem;
 }
 .login-form__label {
   font-family: "Jost", sans-serif;
 }
 .login-form__input {
   border-radius: 1rem;
-  height: 3rem;
-  padding: 0.5rem 1rem;
+}
+
+.offers {
+  grid-template-rows: [header-start] 8rem [header-end content-start] minmax(80vw, min-content) [content-end footer-start] min-content [footer-end];
+}
+
+.section-offers {
+  grid-column: container-start/container-end;
+  grid-row: content-start/content-end;
+  padding: 0 6rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: min-content 1fr;
+  margin: 15rem 0;
+  gap: 6rem;
+}
+.section-offers__btn--search {
+  background-color: #dca54c;
+}
+
+.filters {
+  grid-column: 1/2;
+  background-color: #171618;
+  border-radius: 2rem;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(7, min-content);
+  gap: 2rem;
+  padding: 4rem;
+}
+
+.slider-container {
+  color: #ffffff;
+  font-family: "Jost", sans-serif;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.slider-container__label {
+  grid-column: 1/-1;
+  font-weight: 700;
+}
+.slider-container__slider {
+  grid-column: 1/-1;
+}
+.slider-container__price {
+  display: inline-block;
+  font-weight: 700;
+}
+.slider-container__price--2 {
+  text-align: end;
+}
+
+.checkboxes-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.checkboxes-container__title {
+  grid-column: 1/-1;
+  color: #ffffff;
+  font-family: "Jost", sans-serif;
+  font-weight: 700;
+}
+
+.toggle-container {
+  color: #ffffff;
+  font-family: "Jost", sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+
+.catalog {
+  grid-column: 2/3;
+  grid-row: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, min-content);
+  gap: 2rem;
+}
+
+.catalog-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 3rem 3rem;
+  background-color: #171618;
+  border-radius: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+.catalog-item:hover {
+  opacity: 0.7;
+}
+.catalog-item__image {
+  grid-column: 1/-1;
+}
+.catalog-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: fit;
+  border-radius: 1rem 1rem 0 0;
+}
+.catalog-item__name {
+  grid-column: 1/-1;
+  place-self: center;
+  color: #dca54c;
+  font-family: "Jost", sans-serif;
+}
+.catalog-item__price {
+  grid-column: 1/-1;
+  place-self: center;
+  font-family: "Jost", sans-serif;
+  color: #dca54c;
+}
+
+.contact {
+  grid-template-rows: [header-start] 8rem [header-end content-start] 100vh [content-end footer-start] min-content [footer-end];
+}
+
+.section-contact {
+  grid-column: container-start/container-end;
+  padding: 0 6rem;
+  margin: 15rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr;
+  gap: 3rem;
+}
+@media only screen and (max-width: 900px) {
+  .section-contact {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.info {
+  grid-column: 1/-1;
+}
+.info__heading {
+  color: #000000;
 }

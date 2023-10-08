@@ -1,0 +1,36 @@
+@use "../abstracts/" as *;
+
+.toggle {
+  &__control {
+    transition: 0.3s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    width: 5rem;
+    height: 2rem;
+    display: block;
+    border-radius: 2rem;
+    background-color: $color-secondary-focus;
+    position: relative;
+    &:after {
+      transition: 0.3s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      display: block;
+      background-color: $color-secondary;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__input {
+    display: none;
+    &:checked + .toggle__control {
+      border-color: $color-accent;
+      background-color: $color-accent-focus;
+      &:after {
+        left: 3rem;
+      }
+    }
+  }
+}

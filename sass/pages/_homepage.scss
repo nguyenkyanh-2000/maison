@@ -118,17 +118,23 @@
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: min-content 1fr 1fr;
   gap: 2rem;
 
   @include screenSize(tablet-portrait) {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
   }
 
   @include screenSize(phone) {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: min-content 1fr;
+  }
+
+  &__heading {
+    color: $color-secondary-content;
+    grid-column: 1 / -1;
+    place-self: center;
   }
 }
 
@@ -136,8 +142,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 4fr 1fr 1fr;
-  background-color: $color-secondary-content;
-  color: $color-secondary;
+  background-color: $color-primary;
+  color: $color-primary-content;
   &__img {
     grid-column: 1 / -1;
     width: 100%;
@@ -155,7 +161,7 @@
     font-family: $font-secondary;
 
     svg {
-      fill: $color-secondary;
+      fill: $color-primary-content;
       height: 2rem;
       width: 2rem;
       margin-right: 1rem;

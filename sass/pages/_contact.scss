@@ -1,0 +1,42 @@
+@use "../abstracts/" as *;
+
+.contact {
+  // The grid is divided vertically in _base.scss.
+  // The grid is divided horizontally (downwards order)
+  // Header (6rem)
+  // Section-hero: 80vh
+  // Section-features: 40vw
+  grid-template-rows:
+    [header-start] 8rem [header-end content-start] 100vh
+    [content-end footer-start] min-content [footer-end];
+}
+
+.section-contact {
+  grid-column: container-start / container-end;
+  padding: 0 6rem;
+  margin: 15rem 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr;
+  gap: 3rem;
+
+  @include screenSize(tablet-portrait) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.info {
+  grid-column: 1 / -1;
+
+  &__heading {
+    color: $color-secondary-content;
+  }
+}
+
+.contact-form {
+}
+
+.map {
+}

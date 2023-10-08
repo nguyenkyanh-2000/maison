@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800;1,6..96,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="asset/img/maison-logo.png"
+      type="image/x-icon"
+    />
+    <title>maison</title>
+  </head>
+  <body class="layout offers">
+    <header class="header">
+      <a class="logo" href="index.html">maison</a>
+      <nav class="navbar">
+        <a href="offers.html" class="navbar__link">Offers</a>
+        <a href="#" class="navbar__link">News</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+      </nav>
+      <button class="btn header__btn" onclick="location.href = 'login.html';">
+        Login
+      </button>
+      <button class="header__btn--3-bars">
+        <img src="./asset/svg/bars-3.svg" alt="" />
+      </button>
+    </header>
+
+    <section class="section-offers">
+      <div class="filters">
+        <div class="slider-container">
+          <label class="slider-container__label" for="slider_price"
+            >House price ($)</label
+          >
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+            class="slider slider-container__slider"
+            id="slider-price"
+          />
+          <p class="slider-container__price--1">0</p>
+          <p class="slider-container__price--2">1000000</p>
+        </div>
+
+        <div class="checkboxes-container">
+          <p class="checkboxes-container__title">Options:</p>
+
+          <label class="checkbox"
+            >Apartment
+            <input type="checkbox" class="checkbox__input" checked="checked" />
+            <span class="checkbox__checkmark"></span>
+          </label>
+
+          <label class="checkbox"
+            >House
+            <input type="checkbox" class="checkbox__input" checked="checked" />
+            <span class="checkbox__checkmark"></span>
+          </label>
+
+          <label class="checkbox"
+            >Studio
+            <input type="checkbox" class="checkbox__input" checked="checked" />
+            <span class="checkbox__checkmark"></span>
+          </label>
+
+          <label class="checkbox"
+            >Room
+            <input type="checkbox" class="checkbox__input" checked="checked" />
+            <span class="checkbox__checkmark"></span>
+          </label>
+
+          <label class="checkbox"
+            >Villa
+            <input type="checkbox" class="checkbox__input" checked="checked" />
+            <span class="checkbox__checkmark"></span>
+          </label>
+
+          <label class="checkbox"
+            >Duplex
+            <input type="checkbox" class="checkbox__input" checked="checked" />
+            <span class="checkbox__checkmark"></span>
+          </label>
+        </div>
+
+        <div class="toggle-container">
+          <p class="toggle-container__text">Include furniture?</p>
+          <label class="toggle">
+            <input type="checkbox" class="toggle__input" />
+            <div class="toggle__control"></div>
+          </label>
+        </div>
+
+        <div class="toggle-container">
+          <p class="toggle-container__text">Include garden?</p>
+          <label class="toggle">
+            <input type="checkbox" class="toggle__input" />
+            <div class="toggle__control"></div>
+          </label>
+        </div>
+
+        <div class="toggle-container">
+          <p class="toggle-container__text">Include basement?</p>
+          <label class="toggle">
+            <input type="checkbox" class="toggle__input" />
+            <div class="toggle__control"></div>
+          </label>
+        </div>
+
+        <button class="btn section-offers__btn--search">Search</button>
+        <button class="btn section-offers__btn--reset">Reset</button>
+      </div>
+
+      <div class="catalog">
+        <div class="catalog-item">
+          <div class="catalog-item__image">
+            <img src="./asset/img/gal-1.jpeg" alt="gal-1" />
+          </div>
+          <p class="catalog-item__name">House 1</p>
+          <p class="catalog-item__price">Price: $100000</p>
+        </div>
+
+        <div class="catalog-item">
+          <div class="catalog-item__image">
+            <img src="./asset/img/gal-2.jpeg" alt="gal-2" />
+          </div>
+          <p class="catalog-item__name">House 2</p>
+          <p class="catalog-item__price">Price: $110000</p>
+        </div>
+
+        <div class="catalog-item">
+          <div class="catalog-item__image">
+            <img src="./asset/img/gal-3.jpeg" alt="gal-3" />
+          </div>
+          <p class="catalog-item__name">House 3</p>
+          <p class="catalog-item__price">Price: $130000</p>
+        </div>
+
+        <div class="catalog-item">
+          <div class="catalog-item__image">
+            <img src="./asset/img/gal-4.jpeg" alt="gal-4" />
+          </div>
+          <p class="catalog-item__name">House 4</p>
+          <p class="catalog-item__price">Price: $120000</p>
+        </div>
+
+        <div class="catalog-item">
+          <div class="catalog-item__image">
+            <img src="./asset/img/gal-5.jpeg" alt="gal-5" />
+          </div>
+          <p class="catalog-item__name">House 5</p>
+          <p class="catalog-item__price">Price: $95000</p>
+        </div>
+
+        <div class="catalog-item">
+          <div class="catalog-item__image">
+            <img src="./asset/img/gal-6.jpeg" alt="gal-6" />
+          </div>
+          <p class="catalog-item__name">House 6</p>
+          <p class="catalog-item__price">Price: $140000</p>
+        </div>
+
+        <div class="catalog-item">
+          <div class="catalog-item__image">
+            <img src="./asset/img/gal-7.jpeg" alt="gal-7" />
+          </div>
+          <p class="catalog-item__name">House 7</p>
+          <p class="catalog-item__price">Price: $105000</p>
+        </div>
+
+        <div class="catalog-item">
+          <div class="catalog-item__image">
+            <img src="./asset/img/gal-8.jpeg" alt="gal-8" />
+          </div>
+          <p class="catalog-item__name">House 8</p>
+          <p class="catalog-item__price">Price: $115000</p>
+        </div>
+
+        <div class="catalog-item">
+          <div class="catalog-item__image">
+            <img src="./asset/img/gal-9.jpeg" alt="gal-9" />
+          </div>
+          <p class="catalog-item__name">House 9</p>
+          <p class="catalog-item__price">Price: $90000</p>
+        </div>
+
+        <div class="catalog-item">
+          <div class="catalog-item__image">
+            <img src="./asset/img/gal-10.jpeg" alt="gal-10" />
+          </div>
+          <p class="catalog-item__name">House 10</p>
+          <p class="catalog-item__price">Price: $125000</p>
+        </div>
+
+        <div class="catalog-item">
+          <div class="catalog-item__image">
+            <img src="./asset/img/gal-11.jpeg" alt="gal-11" />
+          </div>
+          <p class="catalog-item__name">House 11</p>
+          <p class="catalog-item__price">Price: $110000</p>
+        </div>
+
+        <div class="catalog-item">
+          <div class="catalog-item__image">
+            <img src="./asset/img/gal-12.jpeg" alt="gal-12" />
+          </div>
+          <p class="catalog-item__name">House 12</p>
+          <p class="catalog-item__price">Price: $100000</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <ul class="nav">
+        <li class="nav__item">
+          <a href="#" class="nav__link">Find your dream home</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Request proposal</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Download home planner</a>
+        </li>
+        <li class="nav__item"><a href="#" class="nav__link">Contact us</a></li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Submit your property</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Come work with us!</a>
+        </li>
+      </ul>
+      <p class="copyright">&copy; Copyright 2023 by Ky Anh Nguyen.</p>
+    </footer>
+  </body>
+</html>
