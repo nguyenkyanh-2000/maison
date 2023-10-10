@@ -1,0 +1,60 @@
+.info {
+  // The grid is divided vertically in _base.scss.
+  // The grid is divided horizontally (downwards order)
+  // Header (6rem)
+  // Section-hero: 80vh
+  // Section-features: 40vw
+  grid-template-rows:
+    [header-start] 8rem [header-end content-start] 100vh
+    [content-end footer-start] min-content [footer-end];
+}
+
+.section-info {
+  grid-column: container-start / container-end;
+  padding: 0 6rem;
+  margin: 15rem 0;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 6rem;
+}
+
+.house-album {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  &__image--main {
+    grid-row: 1 / span 2;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__image--upper {
+    grid-row: 1 / span 1;
+    grid-column: 2 / 3;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__image--lower {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.house-info {
+}
