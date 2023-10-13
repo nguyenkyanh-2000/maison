@@ -3,7 +3,7 @@
   line-height: 2rem; /* 20px */
 }
 
-.house-info__icon-block--furnished, .house-info__icon-block--area, .house-info__icon-block--date, .house-info__icon-block--rooms, .house-info__description p, .contact-form__label, .slider-container, .checkboxes-container__title, .toggle-container, .catalog-item__name, .catalog-item__price, .login-form__label, .house__name, .house__price, .house__location, .house__room, .nav__link:link, .nav__link:visited, .copyright, .navbar__link, .checkbox, .input, .btn {
+.house-info__icon-block--furnished, .house-info__icon-block--area, .house-info__icon-block--date, .house-info__icon-block--rooms, .house-info__description p, .contact-form__label, .slider-container, .checkboxes-container__title, .toggle-container, .catalog-item__name, .catalog-item__price, .login-form__label, .login-form__homelink, .house__name, .house__price, .house__location, .house__room, .nav__link:link, .nav__link:visited, .copyright, .navbar__link, .checkbox, .input, .btn {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
@@ -520,7 +520,7 @@ html {
   height: 45rem;
   background-color: #ffffff;
   border-radius: 2rem;
-  padding: 2rem;
+  padding: 3rem 2rem;
   display: grid;
   grid-template-rows: 2fr 1fr 1fr 2fr;
   gap: 1rem;
@@ -551,6 +551,15 @@ html {
 }
 .login-form__input {
   border-radius: 1rem;
+}
+.login-form__homelink {
+  text-align: center;
+  font-family: "Jost", sans-serif;
+  color: #2e2d2f;
+}
+.login-form__homelink a {
+  text-decoration: none;
+  color: #dca54c;
 }
 
 .offers {

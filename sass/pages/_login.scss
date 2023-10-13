@@ -13,7 +13,7 @@
   height: 45rem;
   background-color: $color-secondary;
   border-radius: 2rem;
-  padding: 2rem;
+  padding: 3rem 2rem;
 
   display: grid;
   grid-template-rows: 2fr 1fr 1fr 2fr;
@@ -50,5 +50,17 @@
 
   &__input {
     border-radius: 1rem;
+  }
+
+  &__homelink {
+    text-align: center;
+    @extend %text-base;
+    font-family: $font-secondary;
+    color: $color-primary-focus;
+
+    a {
+      text-decoration: none;
+      color: $color-accent;
+    }
   }
 }
