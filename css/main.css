@@ -1,4 +1,9 @@
-.contact-form__label, .slider-container, .checkboxes-container__title, .toggle-container, .catalog-item__name, .catalog-item__price, .login-form__label, .house__name, .house__price, .house__location, .house__room, .nav__link:link, .nav__link:visited, .copyright, .navbar__link, .checkbox, .input, .btn {
+.avatar-info__job, .avatar-info__region, .avatar-info__phone {
+  font-size: 1.4rem; /* 14px */
+  line-height: 2rem; /* 20px */
+}
+
+.house-info__icon-block--furnished, .house-info__icon-block--area, .house-info__icon-block--date, .house-info__icon-block--rooms, .house-info__description p, .contact-form__label, .slider-container, .checkboxes-container__title, .toggle-container, .catalog-item__name, .catalog-item__price, .login-form__label, .house__name, .house__price, .house__location, .house__room, .nav__link:link, .nav__link:visited, .copyright, .navbar__link, .checkbox, .input, .btn {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
@@ -750,6 +755,9 @@ html {
   height: 100%;
   object-fit: cover;
 }
+.house-album__image--main:hover {
+  transform: scale(1.1);
+}
 .house-album__image--upper {
   grid-row: 1/span 1;
   grid-column: 2/3;
@@ -759,6 +767,9 @@ html {
   height: 100%;
   object-fit: cover;
 }
+.house-album__image--upper:hover {
+  transform: scale(1.1);
+}
 .house-album__image--lower {
   grid-row: 2/3;
   grid-column: 2/3;
@@ -767,4 +778,113 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.house-album__image--lower:hover {
+  transform: scale(1.1);
+}
+
+.house-info {
+  display: flex;
+  flex-direction: column;
+}
+.house-info__heading {
+  margin-top: -1rem;
+  font-family: "Jost", sans-serif;
+  font-weight: bold;
+  font-size: xx-large;
+}
+.house-info__address {
+  margin-top: -0.5rem;
+  font-family: "Jost", sans-serif;
+  font-weight: normal;
+  font-size: large;
+}
+.house-info__code {
+  font-family: "Jost", sans-serif;
+  color: #2e2d2f;
+  font-weight: normal;
+  font-size: large;
+}
+.house-info__icon-block {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+.house-info__icon-block--furnished, .house-info__icon-block--area, .house-info__icon-block--date, .house-info__icon-block--rooms {
+  place-self: flex-start;
+  display: flex;
+  align-items: center;
+  font-family: "Jost", sans-serif;
+}
+.house-info__icon-block--furnished svg, .house-info__icon-block--area svg, .house-info__icon-block--date svg, .house-info__icon-block--rooms svg {
+  fill: #dca54c;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+}
+.house-info__description {
+  margin-top: 3rem;
+  flex-grow: 1;
+}
+.house-info__description h2 {
+  font-family: "Jost", sans-serif;
+  color: #2e2d2f;
+  font-weight: bold;
+  font-size: large;
+}
+.house-info__description p {
+  font-family: "Lato", sans-serif;
+  color: #2e2d2f;
+  font-weight: normal;
+}
+.house-info__realtor {
+  margin: 3rem 0;
+  width: 100%;
+  height: 20rem;
+  background-color: #e6e6e6;
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.house-info__price {
+  margin: 3rem 0;
+  font-family: "Jost", sans-serif;
+  font-weight: bold;
+  text-align: start;
+  font-size: large;
+}
+.house-info__btn {
+  background-color: #dca54c;
+}
+
+.avatar {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.avatar-info__name {
+  font-family: "Jost", sans-serif;
+  color: #2e2d2f;
+  font-weight: bold;
+  font-size: x-large;
+}
+.avatar-info__job, .avatar-info__region, .avatar-info__phone {
+  font-family: "Lato", sans-serif;
+  color: #2e2d2f;
+  font-weight: normal;
 }

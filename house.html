@@ -19,7 +19,7 @@
   </head>
   <body class="layout info">
     <header class="header">
-      <p class="logo">maison</p>
+      <a class="logo" href="index.html">maison</a>
       <nav class="navbar">
         <a href="offers.html" class="navbar__link">Offers</a>
         <a href="#" class="navbar__link">News</a>
@@ -48,10 +48,59 @@
         </div>
       </div>
       <div class="house-info">
-        <h2 class="heading-4 house-info__heading">House 1</h2>
-        <p class="paragraph-4 house-info__address">Green Avenue, London</p>
-        <p class="paragrpah-4 house-info__property-id">TMQ1004</p>
-        <button class="btn">Contact now</button>
+        <h2 class="house-info__heading">House Serene</h2>
+        <p class="house-info__address">Green Avenue, London</p>
+        <h2 class="house-info__code">Code: TMQ1004</h2>
+        <div class="house-info__icon-block">
+          <div class="house-info__icon-block--furnished">
+            <svg>
+              <use xlink:href="./asset/img/sprite.svg#icon-presentation"></use>
+            </svg>
+            <p>Furnished: Yes</p>
+          </div>
+          <div class="house-info__icon-block--area">
+            <svg>
+              <use xlink:href="./asset/img/sprite.svg#icon-expand"></use>
+            </svg>
+            <p>Area: 1000 m<sup>2</sup></p>
+          </div>
+          <div class="house-info__icon-block--date">
+            <svg>
+              <use xlink:href="./asset/img/sprite.svg#icon-key"></use>
+            </svg>
+            <p>Built in: 1972</p>
+          </div>
+          <div class="house-info__icon-block--rooms">
+            <svg>
+              <use xlink:href="./asset/img/sprite.svg#icon-profile-male"></use>
+            </svg>
+            <p>Rooms: 5</p>
+          </div>
+        </div>
+        <div class="house-info__description">
+          <h2>Description</h2>
+          <p>
+            This property is a sound investment in a serene London neighborhood,
+            combining classic charm with modern comfort. Whether you're seeking
+            a cozy family haven or an elegant space for entertaining, House
+            Serene on Green Avenue is ready to welcome you. Don't miss the
+            opportunity to make it your own.
+          </p>
+        </div>
+
+        <p class="house-info__price">Price: 250000$</p>
+        <div class="house-info__realtor">
+          <div class="avatar">
+            <img src="./asset/img/realtor-1.jpeg" alt="realtor-1" />
+          </div>
+          <div class="avatar-info">
+            <h4 class="avatar-info__name">John Smith</h4>
+            <p class="avatar-info__job">Sales Executive</p>
+            <p class="avatar-info__region">Region: London</p>
+            <p class="avatar-info__phone">Contact number: (+44) 20 7123 4567</p>
+          </div>
+        </div>
+        <button class="btn house-info__btn">Contact now</button>
       </div>
     </section>
 
