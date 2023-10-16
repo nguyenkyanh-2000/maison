@@ -1,0 +1,118 @@
+@use "../abstracts/" as *;
+
+.news {
+  grid-template-rows:
+    [header-start] 8rem [header-end content-start] min-content min-content min-content min-content
+    [content-end footer-start] min-content [footer-end];
+}
+
+.news-heading {
+  margin-top: 15rem;
+  grid-column: 1 /-1;
+  text-align: center;
+  color: $color-primary;
+}
+
+.section-highlights {
+  grid-column: 1 / -1;
+  padding: 0 6rem;
+  margin-top: 15rem;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  gap: 2rem;
+
+  @include screenSize(tablet-landscape) {
+    margin-top: 15rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, min-content);
+  }
+
+  &__card {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+
+    @include screenSize(tablet-landscape) {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__horizontal-card {
+    grid-column: 2 / 3;
+
+    @include screenSize(tablet-landscape) {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.section-news {
+  grid-column: 1/-1;
+  padding: 0 6rem;
+  margin: 15rem 0;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 3rem;
+
+  &__horizontal-card {
+    grid-column: 1 / 2;
+
+    @include screenSize(tablet-portrait) {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__side-bar {
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+
+    @include screenSize(tablet-portrait) {
+      grid-column: 1 / -1;
+    }
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 5rem;
+      border-radius: 2rem;
+      background-color: $color-primary;
+      position: sticky;
+      top: 0;
+
+      @include screenSize(tablet-portrait) {
+        position: static;
+      }
+
+      & h4 {
+        @extend %text-xl;
+        font-family: $font-secondary;
+        color: $color-primary-content;
+      }
+
+      & p {
+        @extend %text-base;
+        font-family: $font-primary;
+        color: $color-primary-content;
+      }
+
+      & input {
+        height: 5rem;
+        align-self: center;
+      }
+
+      & button {
+        width: 100%;
+        background-color: $color-accent;
+        color: $color-accent-content;
+        align-self: center;
+      }
+    }
+  }
+}

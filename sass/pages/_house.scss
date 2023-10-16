@@ -7,7 +7,7 @@
   // Section-hero: 80vh
   // Section-features: 40vw
   grid-template-rows:
-    [header-start] 8rem [header-end content-start] 100vh
+    [header-start] 8rem [header-end content-start] min-content
     [content-end footer-start] min-content [footer-end];
 }
 
@@ -19,12 +19,18 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 6rem;
+
+  @include screenSize(tablet-portrait) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .house-album {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr 1fr;
+  border-radius: 4rem;
 
   &__image--main {
     grid-row: 1 / span 2;
@@ -32,6 +38,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 2rem;
     }
 
     &:hover {
@@ -47,6 +54,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 1rem;
     }
 
     &:hover {
@@ -62,6 +70,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 1rem;
     }
 
     &:hover {
@@ -124,7 +133,6 @@
 
   &__description {
     margin-top: 3rem;
-    flex-grow: 1;
 
     & h2 {
       font-family: $font-secondary;
@@ -151,6 +159,11 @@
     padding: 2rem;
     align-items: center;
     justify-content: space-evenly;
+    border-radius: 1rem;
+
+    @include screenSize(phone) {
+      flex-direction: column;
+    }
   }
 
   &__price {
@@ -171,6 +184,11 @@
   height: 8rem;
   border-radius: 50%;
   overflow: hidden;
+
+  @include screenSize(tablet-portrait) {
+    width: 6rem;
+    height: 6rem;
+  }
 
   & img {
     width: 100%;

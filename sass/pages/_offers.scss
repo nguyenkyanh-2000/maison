@@ -22,6 +22,11 @@
   margin: 15rem 0;
   gap: 6rem;
 
+  @include screenSize(tablet-portrait) {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__btn--search {
     background-color: $color-accent;
   }
@@ -99,6 +104,11 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(4, min-content);
   gap: 2rem;
+
+  @include screenSize(tablet-portrait) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, min-content);
+  }
 
   & a {
     text-decoration: none;

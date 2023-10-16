@@ -7,7 +7,7 @@
   // Section-hero: 80vh
   // Section-features: 40vw
   grid-template-rows:
-    [header-start] 8rem [header-end content-start] 100vh
+    [header-start] 8rem [header-end content-start] min-content
     [content-end footer-start] min-content [footer-end];
 }
 
@@ -22,8 +22,8 @@
   gap: 4rem;
 
   @include screenSize(tablet-portrait) {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -74,4 +74,7 @@
 }
 
 .map {
+  @include screenSize(tablet-portrait) {
+    height: 50rem;
+  }
 }

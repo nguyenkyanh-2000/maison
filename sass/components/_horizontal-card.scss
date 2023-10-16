@@ -1,0 +1,36 @@
+@use "../abstracts/" as *;
+
+.horizontal-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: min-content 1fr;
+  gap: 0.5rem 2rem;
+
+  &__image {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    border-radius: 1rem;
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+  }
+
+  &__title {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: start;
+    @extend %text-xl;
+    font-family: $font-secondary;
+  }
+  &__info {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: start;
+    @extend %text-base;
+    font-family: $font-primary;
+  }
+}

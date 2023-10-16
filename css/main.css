@@ -3,13 +3,18 @@
   line-height: 2rem; /* 20px */
 }
 
-.house-info__icon-block--furnished, .house-info__icon-block--area, .house-info__icon-block--date, .house-info__icon-block--rooms, .house-info__description p, .contact-form__label, .slider-container, .checkboxes-container__title, .toggle-container, .catalog-item__name, .catalog-item__price, .login-form__label, .login-form__homelink, .house__name, .house__price, .house__location, .house__room, .nav__link:link, .nav__link:visited, .copyright, .navbar__link, .checkbox, .input, .btn {
+.section-news__side-bar > div p, .house-info__icon-block--furnished, .house-info__icon-block--area, .house-info__icon-block--date, .house-info__icon-block--rooms, .house-info__description p, .contact-form__label, .slider-container, .checkboxes-container__title, .toggle-container, .catalog-item__name, .catalog-item__price, .login-form__label, .login-form__homelink, .house__name, .house__price, .house__location, .house__room, .nav__link:link, .nav__link:visited, .copyright, .navbar__link, .horizontal-card__info, .card__info, .checkbox, .input, .btn {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
 
 .paragraph-4 {
   font-size: 1.8rem; /* 18px */
+  line-height: 2.8rem; /* 28px */
+}
+
+.section-news__side-bar > div h4, .horizontal-card__title, .card__title {
+  font-size: 2rem; /* 20px */
   line-height: 2.8rem; /* 28px */
 }
 
@@ -244,13 +249,78 @@ html {
 }
 .checkbox .checkbox__input:checked ~ .checkbox__checkmark:after {
   display: block;
-  left: 7.5px;
-  top: 5px;
+  left: 40%;
+  top: 25%;
   width: 0.5rem;
   height: 1rem;
   border: solid white;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 4rem;
+}
+.card > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+.card__content {
+  position: absolute;
+  max-width: 100%;
+  left: 2rem;
+  bottom: 2rem;
+  color: #ffffff;
+  text-align: start;
+}
+.card__title {
+  font-family: "Jost", sans-serif;
+}
+.card__info {
+  font-family: "Lato", sans-serif;
+}
+
+.horizontal-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: min-content 1fr;
+  gap: 0.5rem 2rem;
+}
+.horizontal-card__image {
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  border-radius: 1rem;
+}
+.horizontal-card__image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.horizontal-card__title {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: start;
+  font-family: "Jost", sans-serif;
+}
+.horizontal-card__info {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-self: start;
+  font-family: "Lato", sans-serif;
 }
 
 .header {
@@ -576,6 +646,12 @@ html {
   margin: 15rem 0;
   gap: 6rem;
 }
+@media only screen and (max-width: 900px) {
+  .section-offers {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .section-offers__btn--search {
   background-color: #dca54c;
 }
@@ -644,6 +720,12 @@ html {
   grid-template-rows: repeat(4, min-content);
   gap: 2rem;
 }
+@media only screen and (max-width: 900px) {
+  .catalog {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, min-content);
+  }
+}
 .catalog a {
   text-decoration: none;
 }
@@ -682,7 +764,7 @@ html {
 }
 
 .contact {
-  grid-template-rows: [header-start] 8rem [header-end content-start] 100vh [content-end footer-start] min-content [footer-end];
+  grid-template-rows: [header-start] 8rem [header-end content-start] min-content [content-end footer-start] min-content [footer-end];
 }
 
 .section-contact {
@@ -696,8 +778,8 @@ html {
 }
 @media only screen and (max-width: 900px) {
   .section-contact {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -738,8 +820,14 @@ html {
   background-color: #ffffff;
 }
 
+@media only screen and (max-width: 900px) {
+  .map {
+    height: 50rem;
+  }
+}
+
 .info {
-  grid-template-rows: [header-start] 8rem [header-end content-start] 100vh [content-end footer-start] min-content [footer-end];
+  grid-template-rows: [header-start] 8rem [header-end content-start] min-content [content-end footer-start] min-content [footer-end];
 }
 
 .section-info {
@@ -750,11 +838,18 @@ html {
   grid-template-columns: 2fr 1fr;
   gap: 6rem;
 }
+@media only screen and (max-width: 900px) {
+  .section-info {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .house-album {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr 1fr;
+  border-radius: 4rem;
 }
 .house-album__image--main {
   grid-row: 1/span 2;
@@ -763,6 +858,7 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 2rem;
 }
 .house-album__image--main:hover {
   transform: scale(1.1);
@@ -775,6 +871,7 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 1rem;
 }
 .house-album__image--upper:hover {
   transform: scale(1.1);
@@ -787,6 +884,7 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 1rem;
 }
 .house-album__image--lower:hover {
   transform: scale(1.1);
@@ -835,7 +933,6 @@ html {
 }
 .house-info__description {
   margin-top: 3rem;
-  flex-grow: 1;
 }
 .house-info__description h2 {
   font-family: "Jost", sans-serif;
@@ -857,6 +954,12 @@ html {
   padding: 2rem;
   align-items: center;
   justify-content: space-evenly;
+  border-radius: 1rem;
+}
+@media only screen and (max-width: 600px) {
+  .house-info__realtor {
+    flex-direction: column;
+  }
 }
 .house-info__price {
   margin: 3rem 0;
@@ -874,6 +977,12 @@ html {
   height: 8rem;
   border-radius: 50%;
   overflow: hidden;
+}
+@media only screen and (max-width: 900px) {
+  .avatar {
+    width: 6rem;
+    height: 6rem;
+  }
 }
 .avatar img {
   width: 100%;
@@ -896,4 +1005,112 @@ html {
   font-family: "Lato", sans-serif;
   color: #2e2d2f;
   font-weight: normal;
+}
+
+.news {
+  grid-template-rows: [header-start] 8rem [header-end content-start] min-content min-content min-content min-content [content-end footer-start] min-content [footer-end];
+}
+
+.news-heading {
+  margin-top: 15rem;
+  grid-column: 1/-1;
+  text-align: center;
+  color: #171618;
+}
+
+.section-highlights {
+  grid-column: 1/-1;
+  padding: 0 6rem;
+  margin-top: 15rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  gap: 2rem;
+}
+@media only screen and (max-width: 1200px) {
+  .section-highlights {
+    margin-top: 15rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, min-content);
+  }
+}
+.section-highlights__card {
+  grid-column: 1/2;
+  grid-row: 1/-1;
+}
+@media only screen and (max-width: 1200px) {
+  .section-highlights__card {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
+}
+.section-highlights__horizontal-card {
+  grid-column: 2/3;
+}
+@media only screen and (max-width: 1200px) {
+  .section-highlights__horizontal-card {
+    grid-column: 1/-1;
+  }
+}
+
+.section-news {
+  grid-column: 1/-1;
+  padding: 0 6rem;
+  margin: 15rem 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 3rem;
+}
+.section-news__horizontal-card {
+  grid-column: 1/2;
+}
+@media only screen and (max-width: 900px) {
+  .section-news__horizontal-card {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.section-news__side-bar {
+  grid-column: 2/3;
+  grid-row: 1/-1;
+}
+@media only screen and (max-width: 900px) {
+  .section-news__side-bar {
+    grid-column: 1/-1;
+  }
+}
+.section-news__side-bar > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 5rem;
+  border-radius: 2rem;
+  background-color: #171618;
+  position: sticky;
+  top: 0;
+}
+@media only screen and (max-width: 900px) {
+  .section-news__side-bar > div {
+    position: static;
+  }
+}
+.section-news__side-bar > div h4 {
+  font-family: "Jost", sans-serif;
+  color: #dca54c;
+}
+.section-news__side-bar > div p {
+  font-family: "Lato", sans-serif;
+  color: #dca54c;
+}
+.section-news__side-bar > div input {
+  height: 5rem;
+  align-self: center;
+}
+.section-news__side-bar > div button {
+  width: 100%;
+  background-color: #dca54c;
+  color: #171618;
+  align-self: center;
 }
